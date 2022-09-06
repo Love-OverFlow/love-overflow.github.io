@@ -20,15 +20,15 @@
     var CONFIG = {"hostname":"love-overflow.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="简介该系列记录了笔者学习中科大郑烇、杨坚老师的计网课程时的笔记 本文对应第一章：计算机网络概述 各层次实现的功能 媒介层  物理层 在媒介上，传输和接收电磁波信号、光信号  数据链路层 网络上的相邻两节点传输以帧为单位的数据（解决点到点的问题）  网络层 源主机到目标主机间的传输(E2E)  传输层 加强，细分网络的传输：  从主机 -&gt; 主机 变成 进程 -&gt; 进程  不可靠 -&amp;g">
+  <meta name="description" content="简介该系列记录了笔者学习中科大郑烇、杨坚老师的计网课程时的笔记 本文对应第一章：计算机网络概述 各层次实现的功能(第0层)媒介层  物理层 在媒介上，传输和接收电磁波信号、光信号  数据链路层 网络上的相邻两节点传输以帧为单位的数据（解决点到点的问题）  网络层 源主机到目标主机间的传输(E2E)  传输层 加强，细分网络的传输：  从主机 -&gt; 主机 变成 进程 -&gt; 进程 不可靠">
 <meta property="og:type" content="article">
 <meta property="og:title" content="计算机网络笔记-1">
 <meta property="og:url" content="https://love-overflow.github.io/2022/09/06/cn-note-1/index.html">
 <meta property="og:site_name" content="Love-OverFlow&#39;s blog">
-<meta property="og:description" content="简介该系列记录了笔者学习中科大郑烇、杨坚老师的计网课程时的笔记 本文对应第一章：计算机网络概述 各层次实现的功能 媒介层  物理层 在媒介上，传输和接收电磁波信号、光信号  数据链路层 网络上的相邻两节点传输以帧为单位的数据（解决点到点的问题）  网络层 源主机到目标主机间的传输(E2E)  传输层 加强，细分网络的传输：  从主机 -&gt; 主机 变成 进程 -&gt; 进程  不可靠 -&amp;g">
+<meta property="og:description" content="简介该系列记录了笔者学习中科大郑烇、杨坚老师的计网课程时的笔记 本文对应第一章：计算机网络概述 各层次实现的功能(第0层)媒介层  物理层 在媒介上，传输和接收电磁波信号、光信号  数据链路层 网络上的相邻两节点传输以帧为单位的数据（解决点到点的问题）  网络层 源主机到目标主机间的传输(E2E)  传输层 加强，细分网络的传输：  从主机 -&gt; 主机 变成 进程 -&gt; 进程 不可靠">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-09-06T09:25:29.000Z">
-<meta property="article:modified_time" content="2022-09-06T09:40:37.601Z">
+<meta property="article:modified_time" content="2022-09-06T09:52:08.586Z">
 <meta property="article:author" content="W">
 <meta property="article:tag" content="计算机网络">
 <meta name="twitter:card" content="summary">
@@ -185,7 +185,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2022-09-06 17:25:29 / 修改时间：17:40:37" itemprop="dateCreated datePublished" datetime="2022-09-06T17:25:29+08:00">2022-09-06</time>
+              <time title="创建时间：2022-09-06 17:25:29 / 修改时间：17:52:08" itemprop="dateCreated datePublished" datetime="2022-09-06T17:25:29+08:00">2022-09-06</time>
             </span>
 
           
@@ -201,9 +201,8 @@
       
         <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>该系列记录了笔者学习中科大郑烇、杨坚老师的<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1JV411t7ow?p=3&vd_source=d638f494de49bbb98ccb6eb1ce690b01">计网课程</a>时的笔记</p>
 <p>本文对应第一章：计算机网络概述</p>
-<h3 id="各层次实现的功能"><a href="#各层次实现的功能" class="headerlink" title="各层次实现的功能"></a>各层次实现的功能</h3><ol start="0">
-<li><p>媒介层</p>
-</li>
+<h3 id="各层次实现的功能"><a href="#各层次实现的功能" class="headerlink" title="各层次实现的功能"></a>各层次实现的功能</h3><p>(第0层)媒介层</p>
+<ol>
 <li><p>物理层</p>
 <p>在媒介上，传输和接收电磁波信号、光信号</p>
 </li>
@@ -216,16 +215,12 @@
 <li><p>传输层</p>
 <p>加强，细分网络的传输：</p>
 <ul>
-<li><p>从主机 -&gt; 主机 变成 进程 -&gt; 进程</p>
-</li>
-<li><p>不可靠 -&gt; 可靠</p>
-</li>
+<li>从主机 -&gt; 主机 变成 进程 -&gt; 进程</li>
+<li>不可靠 -&gt; 可靠</li>
 </ul>
 </li>
 <li><p>应用层</p>
-<ul>
-<li>按照协议，交换应用报文，实现各种应用</li>
-</ul>
+<p>按照协议，交换应用报文，实现各种应用</p>
 </li>
 </ol>
 
